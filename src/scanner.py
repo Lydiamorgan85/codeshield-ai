@@ -2,12 +2,12 @@
 Main scanner module for CodeShield AI.
 Orchestrates all detectors and provides scanning functionality.
 """
-
 from typing import List, Dict
 import os
 from src.detectors.dangerous_functions import DangerousFunctionsDetector
 from src.detectors.sql_injection import SQLInjectionDetector
 from src.detectors.xss_detector import XSSDetector
+from src.detectors.secrets_detector import SecretsDetector
 
 class CodeShieldScanner:
     """Main scanner that runs all security detectors."""
@@ -17,6 +17,7 @@ class CodeShieldScanner:
             DangerousFunctionsDetector(),
             SQLInjectionDetector(),
             XSSDetector(),
+            SecretsDetector(),
         ]
         self.all_findings = []
     
