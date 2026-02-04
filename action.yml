@@ -1,0 +1,40 @@
+name: 'CodeShield AI Security Scanner'
+description: 'Detect security vulnerabilities in AI-generated code'
+author: 'Lydiamorgan85'
+branding:
+  icon: 'shield'
+  color: 'red'
+
+inputs:
+  target:
+    description: 'Directory or file to scan'
+    required: false
+    default: '.'
+  fail-on-issues:
+    description: 'Fail the build if security issues are found'
+    required: false
+    default: 'true'
+
+outputs:
+  issues-found:
+    description: 'Number of security issues found'
+  severity-critical:
+    description: 'Number of critical severity issues'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      shell: bash
+      run: |
+        pip install pytest colorama
+    
+    - name: Run CodeShield AI Scanner
+      shell: bash
+      run: |
+        python ${{ github.action_path }}/run_scan.py

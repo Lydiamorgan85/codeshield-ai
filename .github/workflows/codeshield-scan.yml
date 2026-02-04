@@ -1,0 +1,22 @@
+name: CodeShield AI Security Scan
+
+on:
+  pull_request:
+    branches: [ main, master ]
+  push:
+    branches: [ main, master ]
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    name: Scan for Security Vulnerabilities
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Run CodeShield AI
+        uses: ./
+        with:
+          target: '.'
+          fail-on-issues: 'false'
