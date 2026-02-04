@@ -5,7 +5,7 @@ Simple script to run CodeShield AI scanner.
 from src.scanner import CodeShieldScanner
 
 def main():
-    print("🛡️  Starting CodeShield AI Scanner...\n")
+    print("Starting CodeShield AI Scanner...\n")
     
     scanner = CodeShieldScanner()
     

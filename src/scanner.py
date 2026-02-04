@@ -49,11 +49,11 @@ class CodeShieldScanner:
     
     def generate_report(self) -> str:
         if not self.all_findings:
-            return "✅ No security issues found!"
+            return "No security issues found!"
         
         report = []
         report.append("=" * 80)
-        report.append("🛡️  CODESHIELD AI - SECURITY SCAN REPORT")
+        report.append("CODESHIELD AI - SECURITY SCAN REPORT")
         report.append("=" * 80)
         report.append("")
         
@@ -65,28 +65,27 @@ class CodeShieldScanner:
             files[filename].append(finding)
         
         for filename, findings in files.items():
-            report.append(f"📄 File: {filename}")
+            report.append(f"File: {filename}")
             report.append(f"   Found {len(findings)} issue(s)")
             report.append("")
             
             for i, finding in enumerate(findings, 1):
                 report.append(f"   Issue #{i}:")
-                report.append(f"   ├─ Line {finding['line']}, Column {finding['column']}")
-                report.append(f"   ├─ Severity: {finding['severity']}")
+                report.append(f"   |- Line {finding['line']}, Column {finding['column']}")
+                report.append(f"   |- Severity: {finding['severity']}")
                 
-                # Handle both formats (function or vulnerability)
                 if 'function' in finding:
-                    report.append(f"   ├─ Function: {finding['function']}()")
+                    report.append(f"   |- Function: {finding['function']}()")
                 elif 'vulnerability' in finding:
-                    report.append(f"   ├─ Vulnerability: {finding['vulnerability']}")
+                    report.append(f"   |- Vulnerability: {finding['vulnerability']}")
                 
-                report.append(f"   ├─ Message: {finding['message']}")
-                report.append(f"   ├─ Code: {finding['code_snippet']}")
-                report.append(f"   └─ Fix: {finding['recommendation']}")
+                report.append(f"   |- Message: {finding['message']}")
+                report.append(f"   |- Code: {finding['code_snippet']}")
+                report.append(f"   |- Fix: {finding['recommendation']}")
                 report.append("")
         
         report.append("=" * 80)
-        report.append("📊 SUMMARY")
+        report.append("SUMMARY")
         report.append("=" * 80)
         report.append(f"Total Issues: {len(self.all_findings)}")
         report.append(f"Files Scanned: {len(files)}")
