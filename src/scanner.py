@@ -6,6 +6,7 @@ Orchestrates all detectors and provides scanning functionality.
 from typing import List, Dict
 import os
 from src.detectors.dangerous_functions import DangerousFunctionsDetector
+from src.detectors.sql_injection import SQLInjectionDetector
 
 class CodeShieldScanner:
     """Main scanner that runs all security detectors."""
@@ -13,6 +14,7 @@ class CodeShieldScanner:
     def __init__(self):
         self.detectors = [
             DangerousFunctionsDetector(),
+            SQLInjectionDetector(),
         ]
         self.all_findings = []
     
@@ -69,7 +71,13 @@ class CodeShieldScanner:
                 report.append(f"   Issue #{i}:")
                 report.append(f"   ├─ Line {finding['line']}, Column {finding['column']}")
                 report.append(f"   ├─ Severity: {finding['severity']}")
-                report.append(f"   ├─ Function: {finding['function']}()")
+                
+                # Handle both formats (function or vulnerability)
+                if 'function' in finding:
+                    report.append(f"   ├─ Function: {finding['function']}()")
+                elif 'vulnerability' in finding:
+                    report.append(f"   ├─ Vulnerability: {finding['vulnerability']}")
+                
                 report.append(f"   ├─ Message: {finding['message']}")
                 report.append(f"   ├─ Code: {finding['code_snippet']}")
                 report.append(f"   └─ Fix: {finding['recommendation']}")
@@ -80,7 +88,7 @@ class CodeShieldScanner:
         report.append("=" * 80)
         report.append(f"Total Issues: {len(self.all_findings)}")
         report.append(f"Files Scanned: {len(files)}")
-        report.append(f"High Severity: {len([f for f in self.all_findings if f['severity'] == 'HIGH'])}")
+        report.append(f"High/Critical Severity: {len([f for f in self.all_findings if f['severity'] in ['HIGH', 'CRITICAL']])}")
         report.append("=" * 80)
         
         return "\n".join(report)
