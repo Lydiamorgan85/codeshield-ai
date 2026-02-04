@@ -38,7 +38,6 @@
             padding: 0 20px;
         }
 
-        /* Animated Background */
         body::before {
             content: '';
             position: fixed;
@@ -51,7 +50,6 @@
             z-index: -1;
         }
 
-        /* Header */
         header {
             padding: 20px 0;
             background: rgba(10, 14, 39, 0.95);
@@ -129,7 +127,6 @@
             box-shadow: 0 6px 25px rgba(102, 126, 234, 0.6);
         }
 
-        /* Hero Section */
         .hero {
             text-align: center;
             padding: 120px 20px 80px;
@@ -239,7 +236,6 @@
             margin-top: 35px;
         }
 
-        /* Stats Section */
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -279,7 +275,6 @@
             font-weight: 500;
         }
 
-        /* Section Styling */
         .section {
             padding: 100px 20px;
         }
@@ -305,7 +300,6 @@
             line-height: 1.7;
         }
 
-        /* Problem Section */
         .problem-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -355,7 +349,6 @@
             font-size: 18px;
         }
 
-        /* Features Section */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
@@ -425,7 +418,6 @@
             font-size: 18px;
         }
 
-        /* Pricing Section */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -546,7 +538,6 @@
             font-size: 19px;
         }
 
-        /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             padding: 90px 40px;
@@ -587,7 +578,6 @@
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
         }
 
-        /* Footer */
         footer {
             padding: 70px 20px 45px;
             border-top: 1px solid rgba(255, 255, 255, 0.12);
@@ -611,7 +601,6 @@
             color: var(--secondary);
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 48px;
@@ -644,10 +633,9 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">🛡️ CodeShield AI</div>
+            <div class="logo">CodeShield AI</div>
             <div class="nav-links">
                 <a href="#features">Features</a>
                 <a href="#pricing">Pricing</a>
@@ -657,29 +645,27 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-badge">🔥 Trusted by 1,000+ Developers Worldwide</div>
+            <div class="hero-badge">Trusted by 1,000+ Developers Worldwide</div>
             <h1>Stop Security Breaches<br/>Before They Happen</h1>
             <p class="subtitle">Enterprise-grade AI security scanner that detects hardcoded secrets, vulnerabilities, and injection attacks in seconds. Same protection as GitGuardian, 24% less cost.</p>
             
             <div class="price-highlight">
-                <span>💰 Save $72/year vs. GitGuardian</span>
+                <span>Save $72/year vs. GitGuardian</span>
                 <span>•</span>
-                <span>✨ Start Free Forever</span>
+                <span>Start Free Forever</span>
             </div>
             
             <div class="cta-buttons">
-                <a href="https://github.com/Lydiamorgan85/codeshield-ai" class="btn btn-primary">Start Scanning Free →</a>
+                <a href="https://github.com/Lydiamorgan85/codeshield-ai" class="btn btn-primary">Start Scanning Free</a>
                 <a href="#pricing" class="btn btn-secondary">View Pricing</a>
             </div>
             
-            <p class="trust-line">✓ No credit card required • ✓ 2-minute setup • ✓ Open source</p>
+            <p class="trust-line">No credit card required • 2-minute setup • Open source</p>
         </div>
     </section>
 
-    <!-- Stats -->
     <section class="container">
         <div class="stats">
             <div class="stat">
@@ -701,7 +687,6 @@
         </div>
     </section>
 
-    <!-- Problem Section -->
     <section class="section">
         <div class="container">
             <div class="section-header">
@@ -714,27 +699,26 @@
                     <span class="problem-icon">💸</span>
                     <h3>Massive Financial Loss</h3>
                     <p>The average data breach costs companies $4.45 million in damages. One hardcoded AWS key exposed in your repo can drain your entire cloud account overnight.</p>
-                    <div class="problem-stat">📊 $4.45M average breach cost (IBM Security 2023)</div>
+                    <div class="problem-stat">$4.45M average breach cost (IBM Security 2023)</div>
                 </div>
                 
                 <div class="problem-card">
                     <span class="problem-icon">🔓</span>
                     <h3>Exposed Credentials Everywhere</h3>
                     <p>83% of all security breaches involve leaked credentials. Hardcoded passwords, API keys, and access tokens are hiding in your codebase right now, waiting to be exploited.</p>
-                    <div class="problem-stat">⚠️ 6 million secrets leaked on GitHub yearly</div>
+                    <div class="problem-stat">6 million secrets leaked on GitHub yearly</div>
                 </div>
                 
                 <div class="problem-card">
                     <span class="problem-icon">⚡</span>
                     <h3>Attackers Move Fast</h3>
                     <p>Automated bots scan GitHub for exposed secrets within minutes of commit. Once your API key is public, attackers have already found it and started exploiting your infrastructure.</p>
-                    <div class="problem-stat">⏱️ Secrets exploited within 4 minutes of commit</div>
+                    <div class="problem-stat">Secrets exploited within 4 minutes of commit</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
     <section id="features" class="section" style="background: rgba(0,0,0,0.2);">
         <div class="container">
             <div class="section-header">
@@ -812,7 +796,6 @@
         </div>
     </section>
 
-    <!-- Pricing Section -->
     <section id="pricing" class="section">
         <div class="container">
             <div class="section-header">
@@ -821,7 +804,6 @@
             </div>
             
             <div class="pricing-grid">
-                <!-- Free Plan -->
                 <div class="pricing-card">
                     <h3>Free</h3>
                     <p class="plan-desc">Perfect for open source projects</p>
@@ -837,7 +819,6 @@
                     <a href="https://github.com/Lydiamorgan85/codeshield-ai" class="btn btn-secondary">Start Free</a>
                 </div>
                 
-                <!-- Pro Plan -->
                 <div class="pricing-card featured">
                     <div class="pricing-badge">Most Popular</div>
                     <h3>Pro</h3>
@@ -853,10 +834,9 @@
                         <li>Real-time alerts</li>
                         <li>API access</li>
                     </ul>
-                    <a href="#" class="btn btn-primary">Get Pro Now</a>
+                    <a href="https://buy.stripe.com/14A8wIbwJ0Id9nk7on1ZS01" class="btn btn-primary">Get Pro Now</a>
                 </div>
                 
-                <!-- Team Plan -->
                 <div class="pricing-card">
                     <h3>Team</h3>
                     <p class="plan-desc">For growing engineering teams</p>
@@ -871,30 +851,28 @@
                         <li>Compliance reports</li>
                         <li>Dedicated support channel</li>
                     </ul>
-                    <a href="#" class="btn btn-secondary">Contact Sales</a>
+                    <a href="https://buy.stripe.com/5kQ14g1W9duZbvscIH1ZS00" class="btn btn-secondary">Get Team Now</a>
                 </div>
             </div>
             
             <div class="comparison-note">
-                💰 Save $72/year compared to GitGuardian ($25/month) • 14-day money-back guarantee • Cancel anytime
+                Save $72/year compared to GitGuardian ($25/month) • 14-day money-back guarantee • Cancel anytime
             </div>
         </div>
     </section>
 
-    <!-- Final CTA -->
     <section class="container">
         <div class="cta-section">
             <h2>Ready to Secure Your Code?</h2>
             <p>Join 1,000+ developers who trust CodeShield AI to protect their code. Start scanning in less than 2 minutes. No credit card required.</p>
-            <a href="https://github.com/Lydiamorgan85/codeshield-ai" class="btn btn-secondary">Start Free Now →</a>
+            <a href="https://github.com/Lydiamorgan85/codeshield-ai" class="btn btn-secondary">Start Free Now</a>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 CodeShield AI. Built with ❤️ by developers, for developers.</p>
-            <p><a href="https://github.com/Lydiamorgan85/codeshield-ai" target="_blank">GitHub</a> • <a href="#pricing">Pricing</a> • <a href="mailto:support@codeshield.ai">Contact</a></p>
+            <p>&copy; 2026 CodeShield AI. Built by developers, for developers.</p>
+            <p><a href="https://github.com/Lydiamorgan85/codeshield-ai" target="_blank">GitHub</a> • <a href="#pricing">Pricing</a> • <a href="mailto:lydiamorgan85@gmail.com">Contact</a></p>
         </div>
     </footer>
 </body>
