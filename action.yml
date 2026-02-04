@@ -1,25 +1,33 @@
 name: 'CodeShield AI Security Scanner'
-description: 'Detect security vulnerabilities in AI-generated code'
-author: 'Lydiamorgan85'
+description: 'Enterprise-grade security scanner that detects secrets, vulnerabilities, and injection attacks. 24% cheaper than GitGuardian.'
+author: 'Lydia Morgan'
+
 branding:
   icon: 'shield'
-  color: 'red'
+  color: 'purple'
 
 inputs:
-  target:
-    description: 'Directory or file to scan'
+  path:
+    description: 'Path to scan (default: current directory)'
     required: false
     default: '.'
-  fail-on-issues:
-    description: 'Fail the build if security issues are found'
+  
+  output-format:
+    description: 'Output format: text, json, or html'
     required: false
-    default: 'true'
+    default: 'text'
+  
+  severity:
+    description: 'Minimum severity to report: LOW, MEDIUM, HIGH, CRITICAL'
+    required: false
+    default: 'MEDIUM'
 
 outputs:
   issues-found:
     description: 'Number of security issues found'
-  severity-critical:
-    description: 'Number of critical severity issues'
+  
+  report-path:
+    description: 'Path to the generated security report'
 
 runs:
   using: 'composite'
@@ -27,14 +35,17 @@ runs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.11'
+        python-version: '3.10'
     
     - name: Install dependencies
       shell: bash
       run: |
-        pip install pytest colorama
+        pip install --break-system-packages -r ${{ github.action_path }}/requirements.txt
     
-    - name: Run CodeShield AI Scanner
+    - name: Run CodeShield Scanner
       shell: bash
       run: |
-        python ${{ github.action_path }}/run_scan.py
+        python ${{ github.action_path }}/run_scan.py ${{ inputs.path }}
+      env:
+        OUTPUT_FORMAT: ${{ inputs.output-format }}
+        MIN_SEVERITY: ${{ inputs.severity }}
