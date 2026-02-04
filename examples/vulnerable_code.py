@@ -50,6 +50,30 @@ def update_user_unsafe(user_id, new_name):
     query = "UPDATE users SET name = '{}' WHERE id = {}".format(new_name, user_id)  # CRITICAL RISK!
     return query
 
+# VULNERABILITY 9: XSS with f-string
+def display_user_comment_unsafe(comment):
+    """Dangerous: XSS via f-string in HTML"""
+    html = f"<div class='comment'>{comment}</div>"  # HIGH RISK!
+    return html
+
+# VULNERABILITY 10: XSS with % formatting
+def display_username_unsafe(username):
+    """Dangerous: XSS via % formatting in HTML"""
+    html = "<h1>Welcome %s</h1>" % username  # HIGH RISK!
+    return html
+
+# VULNERABILITY 11: XSS with .format()
+def create_link_unsafe(url, text):
+    """Dangerous: XSS via .format() in HTML"""
+    html = "<a href='{}'>{}</a>".format(url, text)  # HIGH RISK!
+    return html
+
+# VULNERABILITY 12: XSS with string concatenation
+def build_html_unsafe(user_input):
+    """Dangerous: XSS via string concatenation"""
+    html = "<p>" + user_input + "</p>"  # HIGH RISK!
+    return html
+
 # Example of SAFE code (this should NOT trigger warnings)
 def safe_calculation(a, b):
     """This is safe - no dangerous functions"""
@@ -57,9 +81,12 @@ def safe_calculation(a, b):
 
 def safe_sql_query(user_id):
     """This is safe - using parameterized queries"""
-    # This would be safe if executed with proper parameters:
-    # cursor.execute("SELECT * FROM users WHERE id = ?", (user_id,))
     return "SELECT * FROM users WHERE id = ?"
+
+def safe_html_output(user_input):
+    """This is safe - using proper escaping"""
+    import html
+    return html.escape(user_input)
 
 if __name__ == "__main__":
     print("This file contains vulnerable code for testing purposes only!")

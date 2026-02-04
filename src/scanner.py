@@ -7,6 +7,7 @@ from typing import List, Dict
 import os
 from src.detectors.dangerous_functions import DangerousFunctionsDetector
 from src.detectors.sql_injection import SQLInjectionDetector
+from src.detectors.xss_detector import XSSDetector
 
 class CodeShieldScanner:
     """Main scanner that runs all security detectors."""
@@ -15,6 +16,7 @@ class CodeShieldScanner:
         self.detectors = [
             DangerousFunctionsDetector(),
             SQLInjectionDetector(),
+            XSSDetector(),
         ]
         self.all_findings = []
     
