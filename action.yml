@@ -21,10 +21,23 @@ inputs:
     description: 'Minimum severity to report: LOW, MEDIUM, HIGH, CRITICAL'
     required: false
     default: 'MEDIUM'
+  
+  license-key:
+    description: 'License key for Pro/Team features (required for private repos). Get yours at https://lydiamorgan85.github.io/codeshield-ai'
+    required: false
+    default: ''
+  
+  fail-on-issues:
+    description: 'Fail the build if security issues are found'
+    required: false
+    default: 'true'
 
 outputs:
   issues-found:
     description: 'Number of security issues found'
+  
+  critical-issues:
+    description: 'Number of critical/high severity issues found'
   
   report-path:
     description: 'Path to the generated security report'
@@ -47,5 +60,7 @@ runs:
       run: |
         python ${{ github.action_path }}/run_scan.py ${{ inputs.path }}
       env:
+        INPUT_LICENSE-KEY: ${{ inputs.license-key }}
+        INPUT_FAIL-ON-ISSUES: ${{ inputs.fail-on-issues }}
         OUTPUT_FORMAT: ${{ inputs.output-format }}
         MIN_SEVERITY: ${{ inputs.severity }}
