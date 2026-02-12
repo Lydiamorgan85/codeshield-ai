@@ -1,7 +1,6 @@
 name: 'CodeShield AI Security Scanner'
-description: 'Enterprise-grade security scanner with AutoFix AI. Detects secrets, vulnerabilities and generates automatic fix suggestions. 24% cheaper than GitGuardian.'
-author: 'Lydia Morgan'
 
+description: 'AutoFix AI security scanner. Detects secrets & vulnerabilities then writes the fix automatically. Free for public repos.'
 branding:
   icon: 'shield'
   color: 'purple'
