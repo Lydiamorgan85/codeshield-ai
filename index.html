@@ -3,18 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodeShield AI - Stop Security Breaches Before They Happen</title>
-    <meta name="description" content="Enterprise-grade code security scanner. Detect secrets, vulnerabilities, and breaches instantly. 24% cheaper than GitGuardian.">
+    <title>CodeShield AI - The Only Security Scanner That Fixes Issues Automatically</title>
+    <meta name="description" content="CodeShield AI detects hardcoded secrets and vulnerabilities then AutoFix AI writes the fix and creates the pull request. You just click merge. 24% cheaper than GitGuardian.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --primary: #667eea;
             --secondary: #764ba2;
@@ -23,7 +18,6 @@
             --success: #4ade80;
             --danger: #ff6b6b;
         }
-
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: var(--dark);
@@ -31,42 +25,27 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         body::before {
             content: '';
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(ellipse at top left, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
-                        radial-gradient(ellipse at bottom right, rgba(118, 75, 162, 0.15) 0%, transparent 50%);
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(ellipse at top left, rgba(102,126,234,0.15) 0%, transparent 50%),
+                        radial-gradient(ellipse at bottom right, rgba(118,75,162,0.15) 0%, transparent 50%);
             z-index: -1;
         }
-
         header {
             padding: 20px 0;
-            background: rgba(10, 14, 39, 0.95);
+            background: rgba(10,14,39,0.95);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+            border-bottom: 1px solid rgba(102,126,234,0.2);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
         }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
+        nav { display: flex; justify-content: space-between; align-items: center; }
         .logo {
             font-size: 28px;
             font-weight: 900;
@@ -74,17 +53,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
-
-        .nav-links {
-            display: flex;
-            gap: 35px;
-            align-items: center;
-        }
-
+        .nav-links { display: flex; gap: 35px; align-items: center; }
         .nav-links a {
             color: var(--light);
             text-decoration: none;
@@ -92,67 +62,46 @@
             transition: all 0.3s;
             position: relative;
         }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
+        .nav-links a:hover { color: var(--primary); }
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
+            bottom: -5px; left: 0;
+            width: 0; height: 2px;
             background: var(--primary);
             transition: width 0.3s;
         }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
+        .nav-links a:hover::after { width: 100%; }
         .nav-cta {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             padding: 12px 28px;
             border-radius: 8px;
             color: white !important;
             font-weight: 700;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 4px 15px rgba(102,126,234,0.4);
             transition: all 0.3s;
         }
-
-        .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(102, 126, 234, 0.6);
-        }
-
+        .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(102,126,234,0.6); }
         .hero {
             text-align: center;
             padding: 120px 20px 80px;
             position: relative;
         }
-
         .hero-badge {
             display: inline-block;
-            background: rgba(102, 126, 234, 0.15);
-            color: var(--primary);
+            background: rgba(74,222,128,0.15);
+            color: var(--success);
             padding: 12px 28px;
             border-radius: 50px;
             font-size: 14px;
             font-weight: 700;
             margin-bottom: 35px;
-            border: 1px solid rgba(102, 126, 234, 0.3);
+            border: 1px solid rgba(74,222,128,0.3);
             letter-spacing: 0.5px;
             text-transform: uppercase;
             animation: pulse 2s ease-in-out infinite;
         }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
         .hero h1 {
             font-size: 72px;
             font-weight: 900;
@@ -164,7 +113,6 @@
             line-height: 1.1;
             letter-spacing: -3px;
         }
-
         .hero .subtitle {
             font-size: 24px;
             color: #b0b0b0;
@@ -174,9 +122,8 @@
             margin-right: auto;
             line-height: 1.6;
         }
-
         .hero .price-highlight {
-            font-size: 20px;
+            font-size: 18px;
             color: var(--success);
             font-weight: 700;
             margin: 30px 0 40px;
@@ -184,8 +131,8 @@
             align-items: center;
             justify-content: center;
             gap: 15px;
+            flex-wrap: wrap;
         }
-
         .cta-buttons {
             display: flex;
             gap: 20px;
@@ -193,7 +140,6 @@
             flex-wrap: wrap;
             margin-bottom: 50px;
         }
-
         .btn {
             padding: 20px 45px;
             font-size: 18px;
@@ -205,59 +151,105 @@
             border: none;
             display: inline-block;
         }
-
         .btn-primary {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
-            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 10px 40px rgba(102,126,234,0.4);
         }
-
-        .btn-primary:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 60px rgba(102, 126, 234, 0.6);
-        }
-
+        .btn-primary:hover { transform: translateY(-4px); box-shadow: 0 15px 60px rgba(102,126,234,0.6); }
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255,255,255,0.08);
             color: white;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255,255,255,0.2);
             backdrop-filter: blur(10px);
         }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.12);
-            border-color: rgba(255, 255, 255, 0.4);
-            transform: translateY(-4px);
+        .btn-secondary:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.4); transform: translateY(-4px); }
+        .trust-line { font-size: 15px; color: #808080; margin-top: 35px; }
+        .autofix-demo {
+            background: rgba(74,222,128,0.05);
+            border: 2px solid rgba(74,222,128,0.3);
+            border-radius: 24px;
+            padding: 50px 40px;
+            margin: 80px 0;
         }
-
-        .trust-line {
-            font-size: 15px;
-            color: #808080;
-            margin-top: 35px;
+        .autofix-demo h2 {
+            font-size: 42px;
+            font-weight: 900;
+            color: var(--success);
+            text-align: center;
+            margin-bottom: 15px;
+            letter-spacing: -2px;
         }
-
+        .autofix-demo .demo-subtitle {
+            text-align: center;
+            color: #a0a0a0;
+            font-size: 19px;
+            margin-bottom: 50px;
+        }
+        .demo-flow {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+        .demo-step {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.08);
+            position: relative;
+        }
+        .demo-step-number {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 18px;
+            margin: 0 auto 15px;
+        }
+        .demo-step h4 { color: #ffffff; font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .demo-step p { color: #a0a0a0; font-size: 14px; }
+        .code-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        .code-block {
+            background: rgba(0,0,0,0.4);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .code-block-header {
+            padding: 15px 20px;
+            font-weight: 700;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .code-block-header.bad { background: rgba(255,107,107,0.2); color: #ff6b6b; border-bottom: 1px solid rgba(255,107,107,0.3); }
+        .code-block-header.good { background: rgba(74,222,128,0.2); color: #4ade80; border-bottom: 1px solid rgba(74,222,128,0.3); }
+        .code-block pre { padding: 20px; font-size: 14px; color: #c0c0c0; font-family: 'Courier New', monospace; line-height: 1.8; }
+        .code-block pre .highlight-bad { color: #ff6b6b; font-weight: bold; }
+        .code-block pre .highlight-good { color: #4ade80; font-weight: bold; }
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin: 80px 0;
             padding: 60px 40px;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            background: linear-gradient(135deg, rgba(102,126,234,0.1) 0%, rgba(118,75,162,0.1) 100%);
             border-radius: 24px;
-            border: 1px solid rgba(102, 126, 234, 0.3);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(102,126,234,0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
         }
-
-        .stat {
-            text-align: center;
-            padding: 20px;
-            transition: transform 0.3s;
-        }
-
-        .stat:hover {
-            transform: translateY(-5px);
-        }
-
+        .stat { text-align: center; padding: 20px; transition: transform 0.3s; }
+        .stat:hover { transform: translateY(-5px); }
         .stat-number {
             font-size: 56px;
             font-weight: 900;
@@ -268,111 +260,37 @@
             letter-spacing: -2px;
             margin-bottom: 10px;
         }
-
-        .stat-label {
-            font-size: 17px;
-            color: #a0a0a0;
-            font-weight: 500;
-        }
-
-        .section {
-            padding: 100px 20px;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 70px;
-        }
-
-        .section-header h2 {
-            font-size: 52px;
-            font-weight: 900;
-            margin-bottom: 24px;
-            color: #ffffff;
-            letter-spacing: -2px;
-        }
-
-        .section-header p {
-            font-size: 21px;
-            color: #a0a0a0;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
-
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 35px;
-            margin-top: 60px;
-        }
-
+        .stat-label { font-size: 17px; color: #a0a0a0; font-weight: 500; }
+        .section { padding: 100px 20px; }
+        .section-header { text-align: center; margin-bottom: 70px; }
+        .section-header h2 { font-size: 52px; font-weight: 900; margin-bottom: 24px; color: #ffffff; letter-spacing: -2px; }
+        .section-header p { font-size: 21px; color: #a0a0a0; max-width: 800px; margin: 0 auto; line-height: 1.7; }
+        .problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 35px; margin-top: 60px; }
         .problem-card {
-            background: linear-gradient(135deg, rgba(255, 107, 107, 0.08) 0%, rgba(255, 107, 107, 0.04) 100%);
-            border: 2px solid rgba(255, 107, 107, 0.25);
+            background: linear-gradient(135deg, rgba(255,107,107,0.08) 0%, rgba(255,107,107,0.04) 100%);
+            border: 2px solid rgba(255,107,107,0.25);
             border-radius: 24px;
             padding: 45px;
             transition: all 0.3s;
         }
-
-        .problem-card:hover {
-            border-color: rgba(255, 107, 107, 0.5);
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(255, 107, 107, 0.2);
-        }
-
-        .problem-icon {
-            font-size: 64px;
-            margin-bottom: 24px;
-            display: block;
-        }
-
-        .problem-card h3 {
-            font-size: 28px;
-            margin-bottom: 18px;
-            color: var(--danger);
-            font-weight: 800;
-        }
-
-        .problem-card p {
-            color: #c0c0c0;
-            font-size: 17px;
-            line-height: 1.8;
-        }
-
-        .problem-stat {
-            margin-top: 28px;
-            padding-top: 28px;
-            border-top: 2px solid rgba(255, 107, 107, 0.3);
-            font-weight: 800;
-            color: var(--danger);
-            font-size: 18px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 35px;
-        }
-
+        .problem-card:hover { border-color: rgba(255,107,107,0.5); transform: translateY(-10px); box-shadow: 0 25px 50px rgba(255,107,107,0.2); }
+        .problem-icon { font-size: 64px; margin-bottom: 24px; display: block; }
+        .problem-card h3 { font-size: 28px; margin-bottom: 18px; color: var(--danger); font-weight: 800; }
+        .problem-card p { color: #c0c0c0; font-size: 17px; line-height: 1.8; }
+        .problem-stat { margin-top: 28px; padding-top: 28px; border-top: 2px solid rgba(255,107,107,0.3); font-weight: 800; color: var(--danger); font-size: 18px; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 35px; }
         .feature-card {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.12);
             border-radius: 24px;
             padding: 50px;
             transition: all 0.3s;
         }
-
-        .feature-card:hover {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: rgba(102, 126, 234, 0.5);
-            transform: translateY(-8px);
-            box-shadow: 0 25px 60px rgba(102, 126, 234, 0.2);
-        }
-
+        .feature-card:hover { background: rgba(255,255,255,0.06); border-color: rgba(102,126,234,0.5); transform: translateY(-8px); box-shadow: 0 25px 60px rgba(102,126,234,0.2); }
+        .feature-card.autofix { border-color: rgba(74,222,128,0.4); background: rgba(74,222,128,0.05); }
+        .feature-card.autofix:hover { border-color: rgba(74,222,128,0.7); box-shadow: 0 25px 60px rgba(74,222,128,0.2); }
         .feature-icon {
-            width: 75px;
-            height: 75px;
+            width: 75px; height: 75px;
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             border-radius: 18px;
             display: flex;
@@ -380,76 +298,54 @@
             justify-content: center;
             font-size: 36px;
             margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 10px 30px rgba(102,126,234,0.4);
         }
-
-        .feature-card h3 {
-            font-size: 26px;
-            margin-bottom: 18px;
+        .feature-icon.green { background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%); box-shadow: 0 10px 30px rgba(74,222,128,0.4); }
+        .feature-card h3 { font-size: 26px; margin-bottom: 18px; color: #ffffff; font-weight: 800; }
+        .feature-card h3.green { color: #4ade80; }
+        .feature-card p { color: #b0b0b0; font-size: 17px; line-height: 1.8; margin-bottom: 20px; }
+        .feature-card ul { list-style: none; padding: 0; }
+        .feature-card li { padding: 10px 0; color: #9090a0; position: relative; padding-left: 30px; }
+        .feature-card li::before { content: "✓"; position: absolute; left: 0; color: var(--success); font-weight: bold; font-size: 18px; }
+        .competitor-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 50px 0;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        .competitor-table th {
+            background: rgba(102,126,234,0.2);
             color: #ffffff;
+            padding: 20px;
+            text-align: center;
             font-weight: 800;
+            font-size: 16px;
         }
-
-        .feature-card p {
-            color: #b0b0b0;
-            font-size: 17px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .feature-card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .feature-card li {
-            padding: 10px 0;
-            color: #9090a0;
-            position: relative;
-            padding-left: 30px;
-        }
-
-        .feature-card li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--success);
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 35px;
-            margin-top: 70px;
-        }
-
+        .competitor-table th.us { background: linear-gradient(135deg, rgba(102,126,234,0.4) 0%, rgba(118,75,162,0.4) 100%); color: var(--primary); }
+        .competitor-table td { padding: 18px 20px; border-bottom: 1px solid rgba(255,255,255,0.06); text-align: center; color: #c0c0c0; font-size: 16px; }
+        .competitor-table td:first-child { text-align: left; font-weight: 600; color: #ffffff; }
+        .competitor-table tr:last-child td { border-bottom: none; }
+        .competitor-table .yes { color: var(--success); font-weight: 800; font-size: 20px; }
+        .competitor-table .no { color: var(--danger); font-weight: 800; font-size: 20px; }
+        .competitor-table .us-col { background: rgba(102,126,234,0.05); }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 35px; margin-top: 70px; }
         .pricing-card {
-            background: rgba(255, 255, 255, 0.04);
-            border: 2px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255,255,255,0.04);
+            border: 2px solid rgba(255,255,255,0.12);
             border-radius: 28px;
             padding: 55px 45px;
             text-align: center;
             transition: all 0.3s;
             position: relative;
         }
-
-        .pricing-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4);
-        }
-
+        .pricing-card:hover { transform: translateY(-12px); box-shadow: 0 30px 70px rgba(0,0,0,0.4); }
         .pricing-card.featured {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.12) 0%, rgba(118, 75, 162, 0.12) 100%);
-            border: 2px solid rgba(102, 126, 234, 0.5);
+            background: linear-gradient(135deg, rgba(102,126,234,0.12) 0%, rgba(118,75,162,0.12) 100%);
+            border: 2px solid rgba(102,126,234,0.5);
             transform: scale(1.05);
         }
-
-        .pricing-card.featured:hover {
-            transform: scale(1.05) translateY(-12px);
-        }
-
+        .pricing-card.featured:hover { transform: scale(1.05) translateY(-12px); }
         .pricing-badge {
             position: absolute;
             top: -18px;
@@ -463,22 +359,10 @@
             font-weight: 800;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 8px 20px rgba(102,126,234,0.4);
         }
-
-        .pricing-card h3 {
-            font-size: 30px;
-            margin-bottom: 14px;
-            color: #ffffff;
-            font-weight: 800;
-        }
-
-        .pricing-card .plan-desc {
-            color: #a0a0a0;
-            font-size: 16px;
-            margin-bottom: 35px;
-        }
-
+        .pricing-card h3 { font-size: 30px; margin-bottom: 14px; color: #ffffff; font-weight: 800; }
+        .pricing-card .plan-desc { color: #a0a0a0; font-size: 16px; margin-bottom: 35px; }
         .price {
             font-size: 64px;
             font-weight: 900;
@@ -490,145 +374,55 @@
             letter-spacing: -3px;
             line-height: 1;
         }
-
-        .price-period {
-            color: #808080;
-            font-size: 17px;
-            margin-bottom: 35px;
-        }
-
-        .pricing-features {
-            text-align: left;
-            margin: 40px 0;
-        }
-
+        .price-period { color: #808080; font-size: 17px; margin-bottom: 35px; }
+        .pricing-features { text-align: left; margin: 40px 0; }
         .pricing-features li {
             list-style: none;
             padding: 15px 0;
             color: #c0c0c0;
             font-size: 16px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
             position: relative;
             padding-left: 35px;
         }
-
-        .pricing-features li::before {
-            content: "✓";
-            color: var(--success);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-            font-size: 20px;
-        }
-
-        .pricing-card .btn {
-            width: 100%;
-            margin-top: 25px;
-        }
-
+        .pricing-features li::before { content: "✓"; color: var(--success); font-weight: bold; position: absolute; left: 0; font-size: 20px; }
+        .pricing-card .btn { width: 100%; margin-top: 25px; }
         .comparison-note {
             text-align: center;
             margin-top: 50px;
             padding: 25px 30px;
-            background: rgba(74, 222, 128, 0.12);
-            border: 2px solid rgba(74, 222, 128, 0.3);
+            background: rgba(74,222,128,0.12);
+            border: 2px solid rgba(74,222,128,0.3);
             border-radius: 16px;
             color: var(--success);
             font-weight: 700;
             font-size: 19px;
         }
-
         .cta-section {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             padding: 90px 40px;
             text-align: center;
             border-radius: 28px;
             margin: 100px 0;
-            box-shadow: 0 30px 80px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 30px 80px rgba(102,126,234,0.4);
         }
-
-        .cta-section h2 {
-            font-size: 52px;
-            font-weight: 900;
-            color: white;
-            margin-bottom: 28px;
-            letter-spacing: -2px;
-        }
-
-        .cta-section p {
-            font-size: 23px;
-            color: rgba(255, 255, 255, 0.95);
-            margin-bottom: 45px;
-            max-width: 750px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.6;
-        }
-
-        .cta-section .btn-secondary {
-            background: white;
-            color: var(--primary);
-            font-weight: 800;
-            border: none;
-        }
-
-        .cta-section .btn-secondary:hover {
-            background: #f5f5f5;
-            transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        footer {
-            padding: 70px 20px 45px;
-            border-top: 1px solid rgba(255, 255, 255, 0.12);
-            text-align: center;
-        }
-
-        footer p {
-            color: #808080;
-            font-size: 15px;
-            margin-bottom: 15px;
-        }
-
-        footer a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        footer a:hover {
-            color: var(--secondary);
-        }
-
+        .cta-section h2 { font-size: 52px; font-weight: 900; color: white; margin-bottom: 28px; letter-spacing: -2px; }
+        .cta-section p { font-size: 23px; color: rgba(255,255,255,0.95); margin-bottom: 45px; max-width: 750px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+        .cta-section .btn-white { background: white; color: var(--primary); font-weight: 800; border: none; }
+        .cta-section .btn-white:hover { background: #f5f5f5; transform: translateY(-4px); box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        footer { padding: 70px 20px 45px; border-top: 1px solid rgba(255,255,255,0.12); text-align: center; }
+        footer p { color: #808080; font-size: 15px; margin-bottom: 15px; }
+        footer a { color: var(--primary); text-decoration: none; font-weight: 600; transition: color 0.3s; }
+        footer a:hover { color: var(--secondary); }
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 48px;
-                letter-spacing: -1px;
-            }
-            
-            .hero .subtitle {
-                font-size: 19px;
-            }
-            
-            .section-header h2 {
-                font-size: 38px;
-            }
-            
-            .pricing-card.featured {
-                transform: scale(1);
-            }
-            
-            .nav-links {
-                gap: 15px;
-                flex-wrap: wrap;
-            }
-
-            .features-grid,
-            .problem-grid,
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
+            .hero h1 { font-size: 48px; letter-spacing: -1px; }
+            .hero .subtitle { font-size: 19px; }
+            .section-header h2 { font-size: 38px; }
+            .pricing-card.featured { transform: scale(1); }
+            .nav-links { gap: 15px; flex-wrap: wrap; }
+            .features-grid, .problem-grid, .pricing-grid { grid-template-columns: 1fr; }
+            .code-comparison { grid-template-columns: 1fr; }
+            .autofix-demo h2 { font-size: 32px; }
         }
     </style>
 </head>
@@ -637,6 +431,7 @@
         <nav class="container">
             <div class="logo">CodeShield AI</div>
             <div class="nav-links">
+                <a href="#autofix">AutoFix AI</a>
                 <a href="#features">Features</a>
                 <a href="#pricing">Pricing</a>
                 <a href="https://github.com/Lydiamorgan85/codeshield-ai" target="_blank">GitHub</a>
@@ -647,21 +442,20 @@
 
     <section class="hero">
         <div class="container">
-            <div class="hero-badge">Trusted by 1,000+ Developers Worldwide</div>
-            <h1>Stop Security Breaches<br/>Before They Happen</h1>
-            <p class="subtitle">Enterprise-grade AI security scanner that detects hardcoded secrets, vulnerabilities, and injection attacks in seconds. Same protection as GitGuardian, 24% less cost.</p>
-            
+            <div class="hero-badge">NEW: AutoFix AI - The Only Scanner That Fixes Issues Automatically</div>
+            <h1>Stop Reading Alerts.<br/>Start Merging Fixes.</h1>
+            <p class="subtitle">CodeShield AI finds security issues then AutoFix AI writes the secure code and creates the pull request. You just click merge. No competitor does this.</p>
             <div class="price-highlight">
-                <span>Save $72/year vs. GitGuardian</span>
+                <span>AutoFix AI included on all plans</span>
+                <span>•</span>
+                <span>Save $72/year vs GitGuardian</span>
                 <span>•</span>
                 <span>Start Free Forever</span>
             </div>
-            
             <div class="cta-buttons">
                 <a href="https://github.com/Lydiamorgan85/codeshield-ai" class="btn btn-primary">Start Scanning Free</a>
                 <a href="#pricing" class="btn btn-secondary">View Pricing</a>
             </div>
-            
             <p class="trust-line">No credit card required • 2-minute setup • Open source</p>
         </div>
     </section>
@@ -687,13 +481,78 @@
         </div>
     </section>
 
+    <section id="autofix" class="container">
+        <div class="autofix-demo">
+            <h2>Meet AutoFix AI</h2>
+            <p class="demo-subtitle">The feature no competitor has. CodeShield finds the issue, writes the fix, creates the PR. You just click merge.</p>
+
+            <div class="demo-flow">
+                <div class="demo-step">
+                    <div class="demo-step-number">1</div>
+                    <h4>CodeShield Scans</h4>
+                    <p>Detects hardcoded secret or vulnerability in your code</p>
+                </div>
+                <div class="demo-step">
+                    <div class="demo-step-number">2</div>
+                    <h4>AutoFix AI Generates</h4>
+                    <p>Writes the secure replacement code in your language</p>
+                </div>
+                <div class="demo-step">
+                    <div class="demo-step-number">3</div>
+                    <h4>PR Created Automatically</h4>
+                    <p>Pull request opened with the fix already applied</p>
+                </div>
+                <div class="demo-step">
+                    <div class="demo-step-number">4</div>
+                    <h4>You Click Merge</h4>
+                    <p>Review and merge in seconds. Done. Secure.</p>
+                </div>
+            </div>
+
+            <div class="code-comparison">
+                <div class="code-block">
+                    <div class="code-block-header bad">❌ BEFORE - Insecure Code Detected</div>
+                    <pre>
+import boto3
+
+# Hardcoded AWS credentials
+<span class="highlight-bad">aws_key = "AKIAIOSFODNN7EXAMPLE"
+aws_secret = "wJalrXUtnFEMI/K7MDENG"</span>
+
+client = boto3.client(
+    's3',
+    aws_access_key_id=aws_key,
+    aws_secret_access_key=aws_secret
+)
+                    </pre>
+                </div>
+                <div class="code-block">
+                    <div class="code-block-header good">✅ AFTER - AutoFix AI Generated</div>
+                    <pre>
+import boto3
+<span class="highlight-good">import os</span>
+
+# Loaded securely from environment
+<span class="highlight-good">aws_key = os.environ.get('AWS_ACCESS_KEY_ID')
+aws_secret = os.environ.get('AWS_SECRET_ACCESS_KEY')</span>
+
+client = boto3.client(
+    's3',
+    aws_access_key_id=aws_key,
+    aws_secret_access_key=aws_secret
+)
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="section">
         <div class="container">
             <div class="section-header">
                 <h2>One Leaked Secret Can Destroy Everything</h2>
-                <p>Data breaches cost millions, destroy reputations, and are entirely preventable. Don't wait until it's too late to protect your code.</p>
+                <p>Data breaches cost millions, destroy reputations, and are entirely preventable. AutoFix AI makes sure they never happen.</p>
             </div>
-            
             <div class="problem-grid">
                 <div class="problem-card">
                     <span class="problem-icon">💸</span>
@@ -701,14 +560,12 @@
                     <p>The average data breach costs companies $4.45 million in damages. One hardcoded AWS key exposed in your repo can drain your entire cloud account overnight.</p>
                     <div class="problem-stat">$4.45M average breach cost (IBM Security 2023)</div>
                 </div>
-                
                 <div class="problem-card">
                     <span class="problem-icon">🔓</span>
                     <h3>Exposed Credentials Everywhere</h3>
                     <p>83% of all security breaches involve leaked credentials. Hardcoded passwords, API keys, and access tokens are hiding in your codebase right now, waiting to be exploited.</p>
                     <div class="problem-stat">6 million secrets leaked on GitHub yearly</div>
                 </div>
-                
                 <div class="problem-card">
                     <span class="problem-icon">⚡</span>
                     <h3>Attackers Move Fast</h3>
@@ -723,10 +580,20 @@
         <div class="container">
             <div class="section-header">
                 <h2>Enterprise Security Without the Enterprise Price</h2>
-                <p>Comprehensive protection that doesn't slow down your workflow. Scan entire repositories in seconds, fix issues with confidence.</p>
+                <p>Comprehensive protection that doesn't slow down your workflow. Find issues, fix them automatically, ship with confidence.</p>
             </div>
-            
             <div class="features-grid">
+                <div class="feature-card autofix">
+                    <div class="feature-icon green">🤖</div>
+                    <h3 class="green">AutoFix AI</h3>
+                    <p>The feature no competitor has. Writes the secure code fix in your language and creates a pull request automatically. You just click merge.</p>
+                    <ul>
+                        <li>Generates secure code in your language</li>
+                        <li>Auto-creates GitHub pull request</li>
+                        <li>Works with Python, JS, Go, Ruby, PHP</li>
+                        <li>Step-by-step fix instructions included</li>
+                    </ul>
+                </div>
                 <div class="feature-card">
                     <div class="feature-icon">🔍</div>
                     <h3>AI-Powered Secret Detection</h3>
@@ -737,7 +604,6 @@
                         <li>Masked output for safe sharing</li>
                     </ul>
                 </div>
-                
                 <div class="feature-card">
                     <div class="feature-icon">🛡️</div>
                     <h3>Vulnerability Scanning</h3>
@@ -748,7 +614,6 @@
                         <li>OWASP Top 10 coverage</li>
                     </ul>
                 </div>
-                
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
                     <h3>Lightning Fast Performance</h3>
@@ -759,40 +624,94 @@
                         <li>GitHub Actions integration</li>
                     </ul>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Actionable Security Reports</h3>
-                    <p>Get detailed, developer-friendly reports with exact line numbers, severity classifications, and step-by-step remediation instructions.</p>
-                    <ul>
-                        <li>Color-coded severity levels</li>
-                        <li>One-click fix suggestions</li>
-                        <li>Export to PDF/JSON/HTML</li>
-                    </ul>
-                </div>
-                
                 <div class="feature-card">
                     <div class="feature-icon">🔄</div>
                     <h3>Seamless CI/CD Integration</h3>
-                    <p>Integrates perfectly with GitHub Actions, GitLab CI, Jenkins, and more. Catch security issues before they get merged into production.</p>
+                    <p>Integrates perfectly with GitHub Actions, GitLab CI, Jenkins, and more. Catch and fix security issues before they get merged into production.</p>
                     <ul>
                         <li>GitHub Actions ready</li>
                         <li>Pre-commit hook support</li>
                         <li>Pull request status checks</li>
                     </ul>
                 </div>
-                
                 <div class="feature-card">
                     <div class="feature-icon">💼</div>
                     <h3>Team Collaboration Tools</h3>
                     <p>Share security reports, track remediation progress, and maintain compliance across your entire engineering team.</p>
                     <ul>
                         <li>Team security dashboards</li>
-                        <li>SOC2 & GDPR compliance reports</li>
-                        <li>Slack/Discord alert integration</li>
+                        <li>SOC2 and GDPR compliance reports</li>
+                        <li>Slack and Discord alert integration</li>
                     </ul>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>How We Compare</h2>
+                <p>CodeShield is the only security scanner that actually fixes issues for you. See how we stack up.</p>
+            </div>
+            <table class="competitor-table">
+                <tr>
+                    <th style="text-align:left;">Feature</th>
+                    <th>GitGuardian</th>
+                    <th>Snyk</th>
+                    <th>Semgrep</th>
+                    <th class="us">CodeShield AI</th>
+                </tr>
+                <tr>
+                    <td>Detect secrets</td>
+                    <td><span class="yes">✓</span></td>
+                    <td><span class="yes">✓</span></td>
+                    <td><span class="yes">✓</span></td>
+                    <td class="us-col"><span class="yes">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Find vulnerabilities</td>
+                    <td><span class="no">✗</span></td>
+                    <td><span class="yes">✓</span></td>
+                    <td><span class="yes">✓</span></td>
+                    <td class="us-col"><span class="yes">✓</span></td>
+                </tr>
+                <tr>
+                    <td>AutoFix AI suggestions</td>
+                    <td><span class="no">✗</span></td>
+                    <td><span class="no">✗</span></td>
+                    <td><span class="no">✗</span></td>
+                    <td class="us-col"><span class="yes">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Auto-create fix PR</td>
+                    <td><span class="no">✗</span></td>
+                    <td><span class="no">✗</span></td>
+                    <td><span class="no">✗</span></td>
+                    <td class="us-col"><span class="yes">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Language-aware fixes</td>
+                    <td><span class="no">✗</span></td>
+                    <td><span class="no">✗</span></td>
+                    <td><span class="no">✗</span></td>
+                    <td class="us-col"><span class="yes">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Free public repos</td>
+                    <td><span class="yes">✓</span></td>
+                    <td><span class="yes">✓</span></td>
+                    <td><span class="yes">✓</span></td>
+                    <td class="us-col"><span class="yes">✓</span></td>
+                </tr>
+                <tr>
+                    <td>Monthly price</td>
+                    <td>$25/mo</td>
+                    <td>$52/mo</td>
+                    <td>$22/mo</td>
+                    <td class="us-col" style="color:#4ade80; font-weight:800;">$19/mo</td>
+                </tr>
+            </table>
         </div>
     </section>
 
@@ -800,9 +719,8 @@
         <div class="container">
             <div class="section-header">
                 <h2>Simple, Fair, Transparent Pricing</h2>
-                <p>Same enterprise-grade security as GitGuardian and Snyk. 24% less cost. Zero hidden fees. Start free, upgrade only when you're ready.</p>
+                <p>AutoFix AI suggestions included on all plans. Auto PR creation on Pro and Team. Zero hidden fees.</p>
             </div>
-            
             <div class="pricing-grid">
                 <div class="pricing-card">
                     <h3>Free</h3>
@@ -813,12 +731,12 @@
                         <li>Unlimited public repo scans</li>
                         <li>GitHub Action integration</li>
                         <li>4 security detectors</li>
+                        <li>AutoFix AI suggestions in report</li>
                         <li>Basic security reports</li>
                         <li>Community support</li>
                     </ul>
                     <a href="https://github.com/Lydiamorgan85/codeshield-ai" class="btn btn-secondary">Start Free</a>
                 </div>
-                
                 <div class="pricing-card featured">
                     <div class="pricing-badge">Most Popular</div>
                     <h3>Pro</h3>
@@ -828,6 +746,7 @@
                     <ul class="pricing-features">
                         <li><strong>Everything in Free, plus:</strong></li>
                         <li>Unlimited private repo scans</li>
+                        <li>AutoFix AI auto-creates PRs</li>
                         <li>VS Code extension</li>
                         <li>Priority email support</li>
                         <li>Detailed security reports</li>
@@ -836,7 +755,6 @@
                     </ul>
                     <a href="https://codeshieldai.lemonsqueezy.com/checkout/buy/7f1c7af9-fc94-45d2-bec7-52287057218e" class="btn btn-primary">Get Pro Now</a>
                 </div>
-                
                 <div class="pricing-card">
                     <h3>Team</h3>
                     <p class="plan-desc">For growing engineering teams</p>
@@ -845,46 +763,45 @@
                     <ul class="pricing-features">
                         <li><strong>Everything in Pro, plus:</strong></li>
                         <li>Up to 10 team members</li>
-                        <li>Team dashboard & analytics</li>
+                        <li>Team dashboard and analytics</li>
                         <li>Custom security policies</li>
-                        <li>Slack/Discord webhooks</li>
+                        <li>Slack and Discord webhooks</li>
                         <li>Compliance reports</li>
                         <li>Dedicated support channel</li>
                     </ul>
                     <a href="https://codeshieldai.lemonsqueezy.com/checkout/buy/8f7144db-4866-40fb-8f54-4969970fd137" class="btn btn-secondary">Get Team Now</a>
                 </div>
             </div>
-            
             <div class="comparison-note">
-                Save $72/year compared to GitGuardian ($25/month) • 14-day money-back guarantee • Cancel anytime
+                Only CodeShield has AutoFix AI • Save $72/year vs GitGuardian • 14-day money-back guarantee • Cancel anytime
             </div>
         </div>
     </section>
 
     <section class="container">
         <div class="cta-section">
-            <h2>Ready to Secure Your Code?</h2>
-            <p>Join 1,000+ developers who trust CodeShield AI to protect their code. Start scanning in less than 2 minutes. No credit card required.</p>
-            <a href="https://github.com/Lydiamorgan85/codeshield-ai" class="btn btn-secondary">Start Free Now</a>
+            <h2>Stop Reading Security Alerts.<br/>Start Merging Security Fixes.</h2>
+            <p>CodeShield AutoFix AI writes the secure code and creates the pull request. You just click merge. Start free in under 2 minutes.</p>
+            <a href="https://github.com/Lydiamorgan85/codeshield-ai" class="btn btn-white">Start Free Now</a>
         </div>
     </section>
-<footer>
-    <div class="container">
-        <p>&copy; 2026 CodeShield AI. Built by developers, for developers.</p>
-        <p>
-            <a href="https://github.com/Lydiamorgan85/codeshield-ai" target="_blank">GitHub</a> •
-            <a href="#pricing">Pricing</a> •
-            <a href="/docs.html">Documentation</a> •
-            <a href="/support.html">Support</a> •
-            <a href="mailto:lydiamorgan85@gmail.com">Contact</a>
-        </p>
-        <p style="margin-top:15px; font-size:13px;">
-            <a href="/privacy.html">Privacy Policy</a> •
-            <a href="/terms.html">Terms of Service</a> •
-            <a href="/cookies.html">Cookie Policy</a>
-        </p>
-    </div>
-</footer>
-  
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CodeShield AI. Built by developers, for developers.</p>
+            <p>
+                <a href="https://github.com/Lydiamorgan85/codeshield-ai" target="_blank">GitHub</a> •
+                <a href="#pricing">Pricing</a> •
+                <a href="/docs.html">Documentation</a> •
+                <a href="/support.html">Support</a> •
+                <a href="mailto:lydiamorgan85@gmail.com">Contact</a>
+            </p>
+            <p style="margin-top:15px; font-size:13px;">
+                <a href="/privacy.html">Privacy Policy</a> •
+                <a href="/terms.html">Terms of Service</a> •
+                <a href="/cookies.html">Cookie Policy</a>
+            </p>
+        </div>
+    </footer>
 </body>
 </html>
