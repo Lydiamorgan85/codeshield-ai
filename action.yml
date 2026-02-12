@@ -1,5 +1,5 @@
 name: 'CodeShield AI Security Scanner'
-description: 'Enterprise-grade security scanner that detects secrets, vulnerabilities, and injection attacks. 24% cheaper than GitGuardian.'
+description: 'Enterprise-grade security scanner with AutoFix AI. Detects secrets, vulnerabilities and generates automatic fix suggestions. 24% cheaper than GitGuardian.'
 author: 'Lydia Morgan'
 
 branding:
@@ -11,34 +11,44 @@ inputs:
     description: 'Path to scan (default: current directory)'
     required: false
     default: '.'
-  
+
   output-format:
     description: 'Output format: text, json, or html'
     required: false
     default: 'text'
-  
+
   severity:
     description: 'Minimum severity to report: LOW, MEDIUM, HIGH, CRITICAL'
     required: false
     default: 'MEDIUM'
-  
+
   license-key:
-    description: 'License key for Pro/Team features (required for private repos). Get yours at https://lydiamorgan85.github.io/codeshield-ai'
+    description: 'License key for Pro/Team features. Get yours at https://codeshield.ie'
     required: false
     default: ''
-  
+
   fail-on-issues:
     description: 'Fail the build if security issues are found'
     required: false
     default: 'true'
 
+  create-pr:
+    description: 'Automatically create a Pull Request with AutoFix AI suggestions (Pro/Team only)'
+    required: false
+    default: 'false'
+
+  github-token:
+    description: 'GitHub token for creating AutoFix Pull Requests'
+    required: false
+    default: ''
+
 outputs:
   issues-found:
-    description: 'Number of security issues found'
-  
+    description: 'Total number of security issues found'
+
   critical-issues:
     description: 'Number of critical/high severity issues found'
-  
+
   report-path:
     description: 'Path to the generated security report'
 
@@ -49,18 +59,20 @@ runs:
       uses: actions/setup-python@v4
       with:
         python-version: '3.10'
-    
+
     - name: Install dependencies
       shell: bash
       run: |
         pip install --break-system-packages -r ${{ github.action_path }}/requirements.txt
-    
-    - name: Run CodeShield Scanner
+
+    - name: Run CodeShield Scanner with AutoFix AI
       shell: bash
       run: |
         python ${{ github.action_path }}/run_scan.py ${{ inputs.path }}
       env:
         INPUT_LICENSE-KEY: ${{ inputs.license-key }}
         INPUT_FAIL-ON-ISSUES: ${{ inputs.fail-on-issues }}
+        INPUT_CREATE-PR: ${{ inputs.create-pr }}
+        INPUT_GITHUB-TOKEN: ${{ inputs.github-token }}
         OUTPUT_FORMAT: ${{ inputs.output-format }}
         MIN_SEVERITY: ${{ inputs.severity }}
