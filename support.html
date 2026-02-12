@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - CodeShield AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary: #667eea; --secondary: #764ba2; --dark: #0a0e27; --light: #e0e0e0; --success: #4ade80; }
+        body { font-family: 'Inter', sans-serif; background: var(--dark); color: var(--light); line-height: 1.8; }
+        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(ellipse at top left, rgba(102,126,234,0.15) 0%, transparent 50%), radial-gradient(ellipse at bottom right, rgba(118,75,162,0.15) 0%, transparent 50%); z-index: -1; }
+        header { padding: 20px 0; background: rgba(10,14,39,0.95); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(102,126,234,0.2); position: sticky; top: 0; z-index: 1000; }
+        nav { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 24px; font-weight: 900; background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-decoration: none; }
+        .nav-links a { color: var(--light); text-decoration: none; font-weight: 500; margin-left: 30px; }
+        .nav-links a:hover { color: var(--primary); }
+        .container { max-width: 900px; margin: 0 auto; padding: 80px 20px; }
+        h1 { font-size: 52px; font-weight: 900; background: linear-gradient(135deg, #ffffff 0%, var(--primary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 15px; letter-spacing: -2px; }
+        .subtitle { color: #a0a0a0; font-size: 20px; margin-bottom: 60px; }
+        h2 { font-size: 26px; font-weight: 800; color: #ffffff; margin: 50px 0 20px; padding-bottom: 12px; border-bottom: 1px solid rgba(102,126,234,0.3); }
+        h3 { font-size: 20px; font-weight: 700; color: var(--primary); margin: 30px 0 12px; }
+        p { color: #c0c0c0; margin-bottom: 18px; font-size: 17px; }
+        .support-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin: 40px 0; }
+        .support-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); border-radius: 20px; padding: 35px; transition: all 0.3s; text-decoration: none; display: block; }
+        .support-card:hover { border-color: rgba(102,126,234,0.5); transform: translateY(-5px); box-shadow: 0 20px 40px rgba(102,126,234,0.2); }
+        .support-icon { font-size: 40px; margin-bottom: 20px; display: block; }
+        .support-card h3 { color: #ffffff; margin: 0 0 10px; font-size: 22px; }
+        .support-card p { color: #a0a0a0; font-size: 16px; margin: 0 0 20px; }
+        .support-card span { color: var(--primary); font-weight: 700; font-size: 15px; }
+        .faq-item { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 30px; margin-bottom: 15px; }
+        .faq-item h3 { color: #ffffff; margin: 0 0 12px; font-size: 18px; }
+        .faq-item p { color: #c0c0c0; margin: 0; font-size: 16px; }
+        .response-times { background: rgba(102,126,234,0.1); border: 1px solid rgba(102,126,234,0.3); border-radius: 16px; padding: 30px; margin: 30px 0; }
+        .response-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .response-row:last-child { border-bottom: none; }
+        .plan-name { color: #ffffff; font-weight: 700; }
+        .response-time { color: var(--success); font-weight: 700; }
+        a { color: var(--primary); text-decoration: none; font-weight: 600; }
+        footer { padding: 50px 20px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; }
+        footer p { color: #808080; font-size: 15px; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="https://codeshield.ie" class="logo">CodeShield AI</a>
+            <div class="nav-links">
+                <a href="https://codeshield.ie#features">Features</a>
+                <a href="https://codeshield.ie#pricing">Pricing</a>
+                <a href="https://github.com/Lydiamorgan85/codeshield-ai" target="_blank">GitHub</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Support</h1>
+        <p class="subtitle">We're here to help. Choose the support channel that works best for you.</p>
+
+        <div class="support-grid">
+            <a href="mailto:lydiamorgan85@gmail.com" class="support-card">
+                <span class="support-icon">📧</span>
+                <h3>Email Support</h3>
+                <p>Get help directly from the team. Best for billing, licence issues, and technical problems.</p>
+                <span>lydiamorgan85@gmail.com →</span>
+            </a>
+
+            <a href="https://github.com/Lydiamorgan85/codeshield-ai/issues" target="_blank" class="support-card">
+                <span class="support-icon">🐛</span>
+                <h3>GitHub Issues</h3>
+                <p>Report bugs, request features, or browse existing issues. Best for technical problems.</p>
+                <span>Open an issue →</span>
+            </a>
+
+            <a href="https://codeshield.ie/docs" class="support-card">
+                <span class="support-icon">📚</span>
+                <h3>Documentation</h3>
+                <p>Step-by-step guides, configuration options, and integration examples.</p>
+                <span>Read the docs →</span>
+            </a>
+        </div>
+
+        <h2>Response Times</h2>
+        <div class="response-times">
+            <div class="response-row">
+                <span class="plan-name">Free Tier</span>
+                <span class="response-time">Community support (GitHub Issues)</span>
+            </div>
+            <div class="response-row">
+                <span class="plan-name">Pro Plan</span>
+                <span class="response-time">Within 24 hours (email)</span>
+            </div>
+            <div class="response-row">
+                <span class="plan-name">Team Plan</span>
+                <span class="response-time">Within 12 hours (dedicated channel)</span>
+            </div>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>How do I get my licence key?</h3>
+            <p>After purchasing a Pro or Team plan, LemonSqueezy will automatically email your licence key within minutes. Check your spam folder if it doesn't arrive. If you still haven't received it after 30 minutes, email us at lydiamorgan85@gmail.com.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Does CodeShield see my source code?</h3>
+            <p>No. CodeShield runs entirely within your GitHub Actions environment. Your source code never leaves your infrastructure and is never transmitted to our servers. We only receive licence validation requests.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What languages does CodeShield support?</h3>
+            <p>CodeShield scans any text-based file. It works with Python, JavaScript, TypeScript, Go, Ruby, Java, PHP, C#, and more. Secret detection works across all file types including .env, .yml, .json, and config files.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I cancel my subscription?</h3>
+            <p>Log into your LemonSqueezy customer portal using the link in your purchase confirmation email. You can cancel anytime. You retain access until the end of your current billing period.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I get a refund?</h3>
+            <p>Yes. We offer a 14-day money-back guarantee. Email us at lydiamorgan85@gmail.com within 14 days of purchase. See our <a href="https://codeshield.ie/terms">Terms of Service</a> for full details.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Why is CodeShield failing my build?</h3>
+            <p>CodeShield fails the build when it finds CRITICAL or HIGH severity issues. This is the intended behaviour to prevent insecure code from reaching production. Check the Actions output for details on what was found and how to fix it. You can set <code>fail-on-issues: 'false'</code> to disable this behaviour.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I add my licence key securely?</h3>
+            <p>Store your licence key as a GitHub Actions secret named CODESHIELD_LICENSE. Never hardcode it directly in your workflow YAML file. See our <a href="https://codeshield.ie/docs">documentation</a> for step-by-step instructions.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I use one licence key across multiple repositories?</h3>
+            <p>Pro licences support 3 activations (repositories). Team licences support 10 activations. If you need more, contact us and we can arrange a custom plan.</p>
+        </div>
+
+        <h2>Contact Us Directly</h2>
+        <p>For anything not covered above, email us at <a href="mailto:lydiamorgan85@gmail.com">lydiamorgan85@gmail.com</a>. We typically respond within 24 hours on working days.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 CodeShield AI. All rights reserved.</p>
+        <p style="margin-top:10px;">
+            <a href="https://codeshield.ie">Home</a> •
+            <a href="https://codeshield.ie/privacy">Privacy Policy</a> •
+            <a href="https://codeshield.ie/terms">Terms of Service</a> •
+            <a href="mailto:lydiamorgan85@gmail.com">Contact</a>
+        </p>
+    </footer>
+</body>
+</html>
